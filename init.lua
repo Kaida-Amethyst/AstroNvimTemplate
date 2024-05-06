@@ -17,3 +17,6 @@ end
 
 require "lazy_setup"
 require "polish"
+
+-- Custom Settings
+vim.opt.wrap = true
