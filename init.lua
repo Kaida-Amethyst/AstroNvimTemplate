@@ -46,3 +46,5 @@ parser_config.moonbit = {
 --     "--offset-encoding=UTF-16",
 --   },
 -- }
+-- Custom Settings
+vim.opt.wrap = true

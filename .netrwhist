@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/cambricon/projects/rust/rustlings'
+let g:netrw_dirhist_4='/home/cambricon/projects/rust'
+let g:netrw_dirhist_3='/home/cambricon/fonts'
+let g:netrw_dirhist_2='/home/cambricon/Documents/pdf'
+let g:netrw_dirhist_1='/home/cambricon/Documents'
