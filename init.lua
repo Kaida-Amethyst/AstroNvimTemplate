@@ -17,3 +17,32 @@ end
 
 require "lazy_setup"
 require "polish"
+
+-- local cmp_nvim_lsp = require "cmp_nvim_lsp"
+require("mason-lspconfig").setup()
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.mbt",
+  command = "set filetype=moonbit",
+})
+
+---@class ParserInfo
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.moonbit = {
+  install_info = {
+    url = "https://github.com/moonbitlang/tree-sitter-moonbit", -- local path or git repo
+    files = { "src/parser.c", "src/scanner.c" },
+    -- optional entries
+    branch = "main",
+  },
+  filetype = "moonbit", -- if filetype does not match the parser name
+}
+
+-- require("lspconfig").clangd.setup {
+--   -- on_attach = on_attach,
+--   -- capabilities = cmp_nvim_lsp.default_capabilities(),
+--   cmd = {
+--     "clangd",
+--     "--offset-encoding=UTF-16",
+--   },
+-- }
