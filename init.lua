@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.moonbit = {
   install_info = {
-    url = "https://github.com/moonbitlang/tree-sitter-moonbit", -- local path or git repo
+    url = "https://github.com/Kaida-Amethyst/tree-sitter-moonbit", -- local path or git repo
     files = { "src/parser.c", "src/scanner.c" },
     -- optional entries
     branch = "main",
