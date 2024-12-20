@@ -1,3 +1,5 @@
+vim.o.ignorecase = false
+
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -29,11 +31,16 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   command = "set filetype=moonbit",
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.mlu",
+  command = "set filetype=cpp",
+})
+
 ---@class ParserInfo
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.moonbit = {
   install_info = {
-    url = "https://github.com/Kaida-Amethyst/tree-sitter-moonbit", -- local path or git repo
+    url = "https://github.com/moonbitlang/tree-sitter-moonbit", -- local path or git repo
     files = { "src/parser.c", "src/scanner.c" },
     -- optional entries
     branch = "main",
